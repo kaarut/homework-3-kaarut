@@ -1,0 +1,31 @@
+import os
+
+
+def scanDirectory(dirPath):
+    # Search seach for all files that have 777 permission
+    # and delete it
+
+    # Go to the directory
+    os.chdir(dirPath)
+
+    # List all files
+    files = os.listdir(folder)
+
+    # Scan for vulnerable files
+    for file in files:
+	file = os.stat(dirpath + file)
+	if oct(file.st_mode)[-1:-3] == 777:
+	   print("mad")
+	else:
+		print(oct(file.st_mode))
+	
+#    for file in files:
+#        if os.access(file, os.X_OK | os.R_OK | os.W_OK):
+#            print(f"The file {file} is vulnerable! Deleting..")
+#            os.remove(file)
+    
+# While True search for files in a directory
+while True:
+    dirname = input("Insert directory name: ")
+    def init():
+        scanDirectory(dirname)
